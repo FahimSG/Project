@@ -1,8 +1,14 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} app.jar
+# from which image - image we used as our base image
+FROM nginx
 
-RUN mkdir destination-dir-for-add
-ADD sample.tar.gz /destination-dir-for-add
+# label to communicate with team members
+LABEL MAINTAINER=FAHIM
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+# copy data from localhost to container
+COPY index.html /usr/share/nginx/html/
+
+# expose port 80
+EXPOSE 80
+
+# launch/create container
+CMD ["nginx", "-g", "daemon off;"]
