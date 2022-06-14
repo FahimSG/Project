@@ -1,12 +1,8 @@
-FROM node:latest
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} app.jar
 
-WORKDIR /usr/src/app
+RUN mkdir destination-dir-for-add
+ADD sample.tar.gz /destination-dir-for-add
 
-COPY package.json ./
-
-RUN npm install 
-
-COPY . . 
-
-EXPOSE 3000
-CMD [ "node", "index.js"]
+ENTRYPOINT ["java","-jar","/app.jar"]
