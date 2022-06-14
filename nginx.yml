@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx
+          image: fahimsg/docker-demo
           ports:
             - containerPort: 80
           imagePullPolicy: Always
