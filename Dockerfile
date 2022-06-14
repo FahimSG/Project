@@ -5,7 +5,7 @@ FROM nginx
 LABEL MAINTAINER=FAHIM
 
 # copy data from localhost to container
-COPY index.html /usr/share/nginx/html/
+# COPY index.html /usr/share/nginx/html/
 
 # expose port 80
 EXPOSE 80
