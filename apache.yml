@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: apache
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: apache
   replicas: 3
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache
     spec:
       containers:
-        - name: nginx
+        - name: apache
           image: fahimsg/docker-demo
           ports:
             - containerPort: 80
@@ -33,5 +33,5 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: nginx
+    app: apache
   type: NodePort
