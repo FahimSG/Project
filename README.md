@@ -1,5 +1,5 @@
 # GitHub - Jenkins - Docker - K8 Project
-
+![diagram](pictures/Diagram.PNG)
 ## Creating a Jenkins Server
 
 For this project, you'll need an account with AWS, GitHub and Docker!
